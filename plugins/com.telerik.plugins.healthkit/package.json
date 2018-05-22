@@ -1,0 +1,60 @@
+{
+  "_from": "com.telerik.plugins.healthkit",
+  "_id": "com.telerik.plugins.healthkit@0.5.5",
+  "_inBundle": false,
+  "_integrity": "sha1-wZ2CaBuxglaR/jw7hCuQszypX98=",
+  "_location": "/com.telerik.plugins.healthkit",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "com.telerik.plugins.healthkit",
+    "name": "com.telerik.plugins.healthkit",
+    "escapedName": "com.telerik.plugins.healthkit",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/com.telerik.plugins.healthkit/-/com.telerik.plugins.healthkit-0.5.5.tgz",
+  "_shasum": "c19d82681bb1825691fe3c3b842b90b33ca95fdf",
+  "_spec": "com.telerik.plugins.healthkit",
+  "_where": "/Users/filip/Desktop/GC02_2017_Team11",
+  "author": {
+    "name": "Telerik / Eddy Verbruggen",
+    "email": "eddyverbruggen@gmail.com",
+    "url": "https://github.com/EddyVerbruggen"
+  },
+  "bundleDependencies": false,
+  "cordova_name": "HealthKit",
+  "deprecated": false,
+  "description": "Interact with the iOS HealthKit SDK.",
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "issue": "https://github.com/Telerik-Verified-Plugins/HealthKit/issues",
+  "keywords": [
+    "Health",
+    "HealthKit",
+    "Fit",
+    "Fitness",
+    "Birthdate",
+    "Gender",
+    "Height",
+    "Weight",
+    "Workout"
+  ],
+  "license": "MIT",
+  "name": "com.telerik.plugins.healthkit",
+  "platforms": [
+    "ios"
+  ],
+  "repo": "https://github.com/Telerik-Verified-Plugins/HealthKit.git",
+  "version": "0.5.5"
+}

@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Contact
+    </ion-title>
+    <ion-buttons end>
+      <img style="width: 40px;" src="assets/imgs/roundel_white.png">
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div style="height:30px;"></div>
+
+  <h6>I would like to:</h6>
+
+  <div style="height:40px;"></div>
+
+  <ion-item>
+    <ion-label>Select option</ion-label>
+    <ion-select [(ngModel)]="selected">
+      <ion-option value="feedback">Give feedback</ion-option>
+      <ion-option value="support">Get support</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <div style="height:50px;"></div>
+
+  <ion-item>
+    <ion-label>
+      Message
+    </ion-label>
+    <ion-textarea placeholder="" [(ngModel)]="message"></ion-textarea>
+  </ion-item>
+
+  <div style="height:90px;"></div>
+
+  <br>
+  <button class="savebutton" ion-button full round (click)="updateEntry()">Send</button>
+</ion-content>

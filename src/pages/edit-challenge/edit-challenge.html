@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Edit Challenge</ion-title>
+    <ion-buttons end>
+      <img style="width: 40px;" src="assets/imgs/roundel_white.png">
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <p *ngIf="badSubmitAttempt">Please write something!</p>
+
+  <form [formGroup]="editChallengeForm">
+    <ion-item>
+      <ion-label floating text-wrap>Original challenge: {{ challengeToBeEdited.name }}</ion-label>
+      <ion-input formControlName="challenge" type="text"></ion-input>
+    </ion-item>
+
+    <div style="height:20px;"></div>
+
+    <br> <button class="update" ion-button full round (click)="save()">Update</button>
+  </form>
+
+</ion-content>

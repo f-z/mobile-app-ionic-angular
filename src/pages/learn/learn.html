@@ -1,0 +1,111 @@
+<ion-header>
+  <ion-toolbar color="primary">
+
+    <ion-title>Learn</ion-title>
+    <ion-buttons end>
+      <img style="width: 40px;" src="assets/imgs/roundel_white.png">
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="currentLearnTab" mode = "ios">
+      <ion-segment-button value="Featured">
+        Featured
+      </ion-segment-button>
+      <ion-segment-button value="Workouts">
+        Workouts
+      </ion-segment-button>
+      <ion-segment-button value="Playlist">
+        Playlist
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+  <!-- ALL VIDEOS -->
+  <div [ngSwitch]="currentLearnTab">
+    <div *ngSwitchCase="'Featured'">
+
+      <!--<ion-searchbar [(ngModel)]="searchQuery" (ionInput)="filterFeatured($event)" (ionClear)="resetList($event)">
+      </ion-searchbar>-->
+
+      <ion-list>
+        <ion-item class="featuredVideo" *ngFor="let featuredVideo of featuredVideos | async" (click)="openVideo(featuredVideo)" detail-none>
+          <img [src]="featuredVideo.snippet.thumbnails.standard.url">
+          <div class="info-container">
+            <p padding text-wrap class="video-title">{{ featuredVideo.snippet.title }}</p>
+          </div>
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <!-- FEATURED VIDEOS -->
+    <div *ngSwitchCase="'Workouts'">
+      <ion-list>
+        <ion-item class="video" *ngFor="let video of allVideos | async" (click)="openVideo(video)" detail-none>
+          <img [src]="video.snippet.thumbnails.standard.url">
+          <div class="info-container">
+            <p padding text-wrap class="video-title">{{ video.snippet.title }}</p>
+          </div>
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <!-- MY PLAYLIST -->
+    <div *ngSwitchCase="'Playlist'">
+
+      <ion-toolbar>
+        <ion-buttons end>
+          <button class="edit" (click)="toggleReorder()" ion-button *ngIf="savedVideos != null && !reorderIsEnabled">
+            Edit List
+          </button>
+          <button class="edit" (click)="toggleReorder()" ion-button *ngIf="reorderIsEnabled">
+            Done
+          </button>
+        </ion-buttons>
+      </ion-toolbar>
+
+      <ion-list [reorder]="reorderIsEnabled" (ionItemReorder)="itemReordered($event)">
+        <ion-item-sliding #slidingItem class="video" *ngFor="let savedVideo of savedVideos; let myVideoIndex = index" detail-none>
+          <ion-item (click)="openVideo(savedVideo.name)">
+            <img [src]="savedVideo.name.snippet.thumbnails.standard.url">
+            <div class="info-container">
+              <p padding text-wrap class="video-title">{{ savedVideo.name.snippet.title }}</p>
+            </div>
+          </ion-item>
+          <ion-item-options side="right">
+            <button ion-button color="danger" (click)="deleteEntry(slidingItem, savedVideo)">
+              <ion-icon name="trash"></ion-icon>
+            </button>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
+    </div>
+
+  </div>
+
+  <!-- Add new challenge/exercise -->
+  <ion-fab right bottom #fab>
+    <div *ngIf="fabList.classList.contains('fab-list-active')" class="backdrop" (click)="fab.close();"></div>
+    <button ion-fab>
+      <ion-icon name="add"></ion-icon>
+    </button>
+    <ion-fab-list side="top" #fabList>
+      <button ion-fab (click)="goToAddChallenge()">
+        <ion-icon color="danger" name="flag"></ion-icon>
+        <ion-label tappable (click)="goToAddChallenge()">Add challenge</ion-label>
+      </button>
+      <button ion-fab (click)="goToAddExercise()">
+        <ion-icon color="danger" name="podium"></ion-icon>
+        <ion-label tappable (click)="goToAddExercise()">Add exercise</ion-label>
+      </button>
+      <button ion-fab (click)="goToAddVideo()">
+        <ion-icon color="danger" name="star"></ion-icon>
+        <ion-label tappable (click)="goToAddVideo()">Add video</ion-label>
+      </button>
+    </ion-fab-list>
+  </ion-fab>
+
+</ion-content>

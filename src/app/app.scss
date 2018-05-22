@@ -1,0 +1,20 @@
+// http://ionicframework.com/docs/theming/
+// App Global Sass
+// styling for icons
+.iconcolour {
+  color: #AF1685;
+  margin: 4px;
+}
+
+// styling for toast notifications
+.toast {
+  >div {
+    background-color: color($colors, danger)!important;
+  }
+  text-align: center;
+}
+
+::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none;
+}

@@ -1,0 +1,29 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title> Update Privacy</ion-title>
+    <ion-buttons end>
+      <img style="width: 40px;" src="assets/imgs/roundel_white.png">
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <div class="spacer" style="height:30px;"></div>
+  <p>
+    I would like to share my exercise and progress data:
+  </p>
+
+  <div class="spacer" style="height:30px;"></div>
+
+  <br>
+  <ion-list>
+    <ion-item>
+      <ion-label>Share</ion-label>
+      <ion-toggle [(ngModel)]="sharingData" (ionChange)="updateEntry();"></ion-toggle>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

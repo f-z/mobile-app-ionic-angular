@@ -1,0 +1,46 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Add challenge</ion-title>
+    <ion-buttons end>
+      <img style="width: 40px;" src="assets/imgs/roundel_white.png">
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <div style="text-align: center;">
+    <img style="width: 55%;" src="assets/imgs/.jpg"> </div>
+  <div style="height:10px;"></div>
+  <!--<p *ngIf="badSubmitAttempt">Please input an exercise type!</p>-->
+  <!--  <form [formGroup]="addChallengeForm"> -->
+  <form [formGroup]="ownChallengeForm" (ngSubmit)="logOwnChallengeForm(form)">
+    <ion-list>
+      <ion-list-header>ADD A CHALLENGE YOURSELF:</ion-list-header>
+      <p *ngIf="badSubmitAttempt">Please write something!</p>
+      <ion-item>
+        <ion-input placeholder="Type here..." type="text" formControlName="ownChallenge"></ion-input>
+      </ion-item>
+    </ion-list>
+    <button class="save" ion-button full round type="submit">Save my challenge</button>
+  </form>
+
+  <p></p>
+
+  <form [formGroup]="challengeForm" (ngSubmit)="logChallengeForm(challenge)">
+    <ion-list radio-group formControlName="challenge" name="radio">
+      <ion-list-header>OR SELECT FROM THE LIST:</ion-list-header>
+      <ion-item *ngFor="let challenge of challengeList">
+        <ion-label text-wrap>{{ challenge.name }}
+          <br>
+          <span style="font-size: 12px; color: gray;"> {{ challenge.challengeDate }}</span>
+        </ion-label>
+        <ion-radio [value]="challenge" (ionSelect)="select(challenge)"></ion-radio>
+      </ion-item>
+    </ion-list>
+    <button class="save" ion-button full round type="submit">Save challenge</button>
+  </form>
+
+</ion-content>

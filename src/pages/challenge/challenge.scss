@@ -1,0 +1,98 @@
+page-challenge {
+  h6 {
+    color: #AF1685;
+  }
+  p {
+    font-size: 10pt;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  .edit {
+    font-size: 10pt;
+  }
+  .item {
+    //margin: 0;
+    width: 100%;
+    position: relative; //text-align: center;
+  }
+  .title {
+    position: absolute;
+    bottom: 28px;
+    left: 16px;
+    font-size: 5.5vw;
+    font-weight: bold;
+    margin-bottom: 19px;
+    right: 16px; //margin-left: 12px;
+    color: #fff;
+  } // .subtitle {
+  //   font-size: 0.8em;
+  //   font-weight: bold;
+  //   position: absolute;
+  //   bottom: 8px;
+  //   left: 16px;
+  //   margin-bottom: 20px;
+  //   margin-left: 12px;
+  //   color: #fff;
+  // }
+  .info-container p {
+    //width: 100%;
+    height: 80px;
+    position: absolute;
+    z-index: 99;
+    bottom: 0;
+    opacity: 0.8;
+    background: #002C31;
+    color: #fff;
+  } ///////////////// HELP CARDS ////////////////////////
+  .helpCard {
+    font-size: 20px;
+    margin: 0; //position: absolute;
+    // top: 50%;
+    // left: 50%;
+    line-height: 200%;
+    height: 70%;
+    width: 90%;
+    text-align: left; // transform: translate(-50%, -50%);
+  }
+  .helpCard p {
+    color: gray;
+    line-height: 1.5;
+    display: inline-block;
+    vertical-align: middle;
+  } ///////////////// COMPLETED CHALLENGES ///////////////
+  .completed {
+    text-decoration: line-through;
+    color: gray;
+  } ///////////////// FAB BUTTONS ////////////////////////
+  button[ion-fab] {
+    overflow: visible;
+    position: relative;
+    ion-label {
+      position: absolute;
+      top: -8px;
+      right: 40px;
+      color: white;
+      background-color: #002C31;
+      box-shadow: 0 3px 4px #6b6b6b;
+      line-height: 24px;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+  }
+  .fab {
+    contain: layout;
+  }
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+  button.fab.fab-close-active {
+    z-index: 1;
+  } ////////////////////////////////////////////////////////
+}

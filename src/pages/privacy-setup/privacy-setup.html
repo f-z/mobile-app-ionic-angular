@@ -1,0 +1,37 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Profile Set-up</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <h6 class="steps">Step 4 of 4</h6>
+
+  <p class="firstpara">...</p>
+
+  <div style="height:10px;"></div>
+
+  <p class="para">Would you like to share your exercise and progress data?</p>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Share</ion-label>
+      <ion-toggle [(ngModel)]="sharing"></ion-toggle>
+    </ion-item>
+  </ion-list>
+
+  <p class="para">Please note...</p>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Agree*</ion-label>
+      <ion-toggle [(ngModel)]="agree"></ion-toggle>
+    </ion-item>
+  </ion-list>
+
+  <button class="done" ion-button full round (click)="goToHomePage()">Done</button>
+
+</ion-content>

@@ -1,0 +1,37 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-buttons end><button ion-button clear (click)="next()">Next</button></ion-buttons>
+    <ion-title>Profile Set-up</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h6 class="steps">Step 2 of 4</h6>
+
+  <div style="height:10px;"></div>
+
+  <h5>This app aims to track your activities accurately. We would like the following (optional): </h5>
+  <ion-list>
+    <form [formGroup]="addHeightWeightForm">
+      <div style="height:10px;"></div>
+      <ion-item>
+        <ion-label floating>Height (cm)</ion-label>
+        <ion-input formControlName="height" type="number"></ion-input>
+      </ion-item>
+
+      <div style="height:10px;"></div>
+
+      <br>
+      <ion-item>
+        <ion-label floating>Weight (kg)</ion-label>
+        <ion-input formControlName="weight" type="number"></ion-input>
+      </ion-item>
+
+    </form>
+
+  </ion-list>
+
+</ion-content>

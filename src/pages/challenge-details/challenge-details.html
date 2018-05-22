@@ -1,0 +1,16 @@
+<ion-header *ngIf="challengeInfo != null">
+  <ion-navbar color="primary">
+    <ion-title>{{ challengeInfo.name }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding *ngIf="challengeInfo != null">
+  <div style="text-align: center;">
+    <h5 padding>{{ challengeInfo.name }}</h5>
+    <img style="width: 100%;" src="{{ challengeInfo.image }}">
+    <p class="date">{{ challengeInfo.date }}</p>
+    <p>
+      {{ challengeInfo.text }}
+    </p>
+  </div>
+</ion-content>

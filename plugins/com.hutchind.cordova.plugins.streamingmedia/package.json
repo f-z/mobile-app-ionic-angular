@@ -1,0 +1,54 @@
+{
+  "_from": "cordova-plugin-streaming-media@1.0.2",
+  "_id": "cordova-plugin-streaming-media@1.0.2",
+  "_inBundle": false,
+  "_integrity": "sha1-02hIAVMlIIoPmX+6TOmAZ9ktLMs=",
+  "_location": "/cordova-plugin-streaming-media",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "cordova-plugin-streaming-media@1.0.2",
+    "name": "cordova-plugin-streaming-media",
+    "escapedName": "cordova-plugin-streaming-media",
+    "rawSpec": "1.0.2",
+    "saveSpec": null,
+    "fetchSpec": "1.0.2"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-streaming-media/-/cordova-plugin-streaming-media-1.0.2.tgz",
+  "_shasum": "d36848015325208a0f997fba4ce98067d92d2ccb",
+  "_spec": "cordova-plugin-streaming-media@1.0.2",
+  "_where": "/Users/filip/Desktop/GC02_2017_Team11",
+  "author": {
+    "name": "Nicholas Hutchind"
+  },
+  "bugs": {
+    "url": "https://github.com/nchutchind/Streaming-Media-Cordova-Plugin/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "This plugin allows you to stream audio and video in a fullscreen, native player on iOS and Android.",
+  "homepage": "https://github.com/nchutchind/Streaming-Media-Cordova-Plugin#readme",
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova:android",
+    "cordova:ios",
+    "cordova:media",
+    "cordova:streaming"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "cordova-plugin-streaming-media",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nchutchind/Streaming-Media-Cordova-Plugin.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.2"
+}

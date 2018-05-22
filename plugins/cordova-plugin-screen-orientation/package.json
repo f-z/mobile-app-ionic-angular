@@ -1,0 +1,74 @@
+{
+  "_from": "cordova-plugin-screen-orientation@^2.0.2",
+  "_id": "cordova-plugin-screen-orientation@2.0.2",
+  "_inBundle": false,
+  "_integrity": "sha1-kjMzRdE+T9TovUNsqeekbAl7GzY=",
+  "_location": "/cordova-plugin-screen-orientation",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "cordova-plugin-screen-orientation@^2.0.2",
+    "name": "cordova-plugin-screen-orientation",
+    "escapedName": "cordova-plugin-screen-orientation",
+    "rawSpec": "^2.0.2",
+    "saveSpec": null,
+    "fetchSpec": "^2.0.2"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-screen-orientation/-/cordova-plugin-screen-orientation-2.0.2.tgz",
+  "_shasum": "92333345d13e4fd4e8bd436ca9e7a46c097b1b36",
+  "_spec": "cordova-plugin-screen-orientation@^2.0.2",
+  "_where": "/Users/filip/Desktop/GC02_2017_Team11",
+  "author": {
+    "name": "gbenvenuti"
+  },
+  "bugs": {
+    "url": "https://issues.apache.org/jira/browse/CB"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-screen-orientation",
+    "platforms": [
+      "android",
+      "ios",
+      "wp8"
+    ]
+  },
+  "deprecated": false,
+  "description": "Adds Screen Orientation API lock and unlock functions to the global screen object in android, iOS, WP8, W8.1, and BB10.",
+  "devDependencies": {
+    "jshint": "^2.9.4"
+  },
+  "engines": {
+    "cordovaDependencies": {
+      "3.0.0": {
+        "cordova": ">100"
+      }
+    }
+  },
+  "homepage": "https://github.com/apache/cordova-plugin-screen-orientation#readme",
+  "keywords": [
+    "cordova",
+    "device",
+    "ecosystem:cordova",
+    "screen",
+    "orientation",
+    "portrait",
+    "landscape"
+  ],
+  "license": "Apache-2.0",
+  "name": "cordova-plugin-screen-orientation",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apache/cordova-plugin-screen-orientation.git"
+  },
+  "scripts": {
+    "jshint": "node node_modules/jshint/bin/jshint www && node node_modules/jshint/bin/jshint src && node node_modules/jshint/bin/jshint demo/www",
+    "test": "npm run jshint"
+  },
+  "version": "2.0.2"
+}

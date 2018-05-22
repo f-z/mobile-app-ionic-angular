@@ -1,0 +1,69 @@
+{
+  "_from": "cordova-plugin-pedometer",
+  "_id": "cordova-plugin-pedometer@0.4.1",
+  "_inBundle": false,
+  "_integrity": "sha1-10Imt3/oISY8Nqkx73GFdcJeucQ=",
+  "_location": "/cordova-plugin-pedometer",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cordova-plugin-pedometer",
+    "name": "cordova-plugin-pedometer",
+    "escapedName": "cordova-plugin-pedometer",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-pedometer/-/cordova-plugin-pedometer-0.4.1.tgz",
+  "_shasum": "d74226b77fe821263c36a931ef718575c25eb9c4",
+  "_spec": "cordova-plugin-pedometer",
+  "_where": "/Users/filip/Desktop/GC02_2017_Team11",
+  "author": {
+    "name": "Lee Crossley",
+    "email": "leee@hotmail.co.uk",
+    "url": "http://ilee.co.uk/"
+  },
+  "bugs": {
+    "url": "https://github.com/leecrossley/cordova-plugin-pedometer/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-pedometer",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "Cordova / PhoneGap Plugin for the Core Motion Pedometer to fetch pedestrian-related data, such as step counts and other information about the distance travelled.",
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "homepage": "https://github.com/leecrossley/cordova-plugin-pedometer#readme",
+  "keywords": [
+    "cordova",
+    "core motion",
+    "pedometer",
+    "steps",
+    "distance",
+    "pedestrian",
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-pedometer",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leecrossley/cordova-plugin-pedometer.git"
+  },
+  "version": "0.4.1"
+}

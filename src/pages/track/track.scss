@@ -1,0 +1,78 @@
+page-track {
+  ///////////////// HELP CARDS ////////////////////////
+  .helpCard {
+    font-size: 20px;
+    margin: 0; //position: absolute;
+    // top: 50%;
+    // left: 50%;
+    line-height: 200%;
+    height: 70%;
+    width: 100%;
+    text-align: left; // transform: translate(-50%, -50%);
+  }
+  .helpCard p {
+    color: gray;
+    line-height: 1.5;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  ion-card-header {
+    font-weight: bold;
+  }
+  #steps {
+    font-size: 50pt;
+  }
+  .chart-wrapper {
+    //width: 25%;
+    //display: inline-block;
+    //margin: 1em 2em;
+  }
+  canvas {
+    //height: 500px;
+  } // .helpCard {
+  //   font-size: 24px;
+  //   margin: 0;
+  //   position: absolute;
+  //   top: 50%;
+  //   left: 50%;
+  //   line-height: 250%;
+  //   height: 70%;
+  //   width: 90%;
+  //   text-align: left;
+  //   transform: translate(-50%, -50%);
+  // }
+  .exerciseItem {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100%;
+  } ///////////////// FAB BUTTONS ////////////////////////
+  button[ion-fab] {
+    overflow: visible;
+    position: relative;
+    ion-label {
+      position: absolute;
+      top: -8px;
+      right: 40px;
+      color: white;
+      background-color: #002C31;
+      box-shadow: 0 3px 4px #6b6b6b;
+      line-height: 24px;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+  }
+  .fab {
+    contain: layout;
+  }
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+  button.fab.fab-close-active {
+    z-index: 1;
+  } ////////////////////////////////////////////////
+}

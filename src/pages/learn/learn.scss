@@ -1,0 +1,73 @@
+page-learn {
+  //////////// VIDEO CARDS ///////////////////
+  .video {
+    position: relative;
+    width: 100%;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  .edit {
+    font-size: 10pt;
+  }
+  .video-title {
+    position: absolute;
+    bottom: 28px;
+    left: 16px;
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 19px;
+    right: 16px; //margin-left: 12px;
+    color: #fff;
+  }
+  .video-description {
+    font-size: 3vw;
+    font-weight: bold;
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    margin-bottom: 20px;
+    margin-left: 12px;
+    color: #fff;
+  }
+  .info-container p {
+    //width: 100%;
+    height: 80px;
+    position: absolute;
+    z-index: 99;
+    bottom: 0;
+    opacity: 0.8;
+    background: #002C31;
+    color: #fff;
+  } ///////////////// FAB BUTTONS ////////////////////////
+  button[ion-fab] {
+    overflow: visible;
+    position: relative;
+    ion-label {
+      position: absolute;
+      top: -8px;
+      right: 40px;
+      color: white;
+      background-color: #002C31;
+      box-shadow: 0 3px 4px #6b6b6b;
+      line-height: 24px;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+  }
+  .fab {
+    contain: layout;
+  }
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+  button.fab.fab-close-active {
+    z-index: 1;
+  } ////////////////////////////////////////////////
+}

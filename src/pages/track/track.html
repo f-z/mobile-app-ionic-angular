@@ -1,0 +1,130 @@
+<ion-header>
+  <ion-toolbar color="primary">
+
+    <ion-title>
+      Track
+    </ion-title>
+    <ion-buttons end>
+      <img style="width: 40px;" src="assets/imgs/roundel_white.png">
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="outer-content">
+  <div>
+    <ion-toolbar>
+      <ion-segment [(ngModel)]="currentTrackTab" (ngModelChange)="refresh()" mode="ios">
+        <ion-segment-button value="Statistics">
+          Statistics
+        </ion-segment-button>
+        <ion-segment-button value="History">
+          History
+        </ion-segment-button>
+      </ion-segment>
+    </ion-toolbar>
+  </div>
+  <div [ngSwitch]="currentTrackTab">
+    <div *ngSwitchCase="'Statistics'">
+      <ion-card>
+        <ion-card-header>
+          Weekly Summary
+        </ion-card-header>
+        <section class="chart-wrapper">
+          <canvas #barCanvas height="350"></canvas>
+        </section>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-header>
+          Overall Summary
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list>
+            <ion-item>Total challenges set: {{numberOfSetChallenges}}
+            </ion-item>
+            <ion-item>Total challenges completed: {{numberOfCompletedChallenges}}
+            </ion-item>
+            <ion-item>Total videos saved: {{numberOfSavedVideos}}
+            </ion-item>
+            <ion-item>Total exercises finished: {{numberOfCompletedExercises}}
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <!-- EXERCISE HISTORY PAGE -->
+    <div *ngSwitchCase="'History'">
+
+      <!-- Help card upon early loading of app -->
+      <div class="helpCard" *ngIf="exerciseHistory.length == 0">
+        <p padding>
+          Add an exercise that you have completed recently using the "Add" button at the bottom of the page.
+        </p>
+      </div>
+
+      <!-- Exercise History list -->
+      <ion-list>
+        <ion-item-sliding #slidingItem *ngFor="let exercise of exerciseHistory">
+          <ion-item>
+            <ion-card class="exerciseItem">
+              <ion-row>
+                <ion-col>
+                  <ion-card-header style="font-size: 22px;">{{exercise.type}}</ion-card-header>
+                </ion-col>
+                <ion-col>
+                  <ion-card-header style="text-align: right;">{{exercise.formattedDate}}</ion-card-header>
+                </ion-col>
+              </ion-row>
+              <ion-card-content style="width: 100%;">
+                <div style="width: 100%;" *ngIf="exercise.distance > 0">
+                  <p style="width: 50%; font-size: 17px; float: left;">Distance: </p>
+                  <p style="width: 50%; font-size: 17px; text-align: right; float: right;"> {{exercise.distance}} km</p>
+                </div>
+                <div style="clear: both;"></div>
+                <div style="width: 100%;" *ngIf="exercise.time > 0">
+                  <p style="width: 50%; font-size: 17px; float: left;">Time: </p>
+                  <p style="width: 50%; font-size: 17px; text-align: right; float: right;">{{exercise.time}} mins</p>
+                </div>
+                <div style="clear: both;"></div>
+              </ion-card-content>
+            </ion-card>
+          </ion-item>
+          <ion-item-options side="right">
+            <button ion-button color="primary" (click)="goToEditExercise(slidingItem, exercise)">
+              <ion-icon name="create"></ion-icon>
+            </button>
+            <button ion-button color="danger" (click)="deleteEntry(slidingItem, exercise)">
+              <ion-icon name="trash"></ion-icon>
+            </button>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
+
+    </div>
+  </div>
+
+  <!-- Add new challenge/exercise -->
+  <ion-fab right bottom #fab>
+    <div *ngIf="fabList.classList.contains('fab-list-active')" class="backdrop" (click)="fab.close();"></div>
+    <button ion-fab>
+      <ion-icon name="add"></ion-icon>
+    </button>
+    <ion-fab-list side="top" #fabList>
+      <button ion-fab (click)="goToAddChallenge()">
+        <ion-icon color="danger" name="flag"></ion-icon>
+        <ion-label tappable (click)="goToAddChallenge()">Add challenge</ion-label>
+      </button>
+      <button ion-fab (click)="goToAddExercise()">
+        <ion-icon color="danger" name="podium"></ion-icon>
+        <ion-label tappable (click)="goToAddExercise()">Add exercise</ion-label>
+      </button>
+      <button ion-fab (click)="goToAddVideo()">
+        <ion-icon color="danger" name="star"></ion-icon>
+        <ion-label tappable (click)="goToAddVideo()">Add video</ion-label>
+      </button>
+    </ion-fab-list>
+  </ion-fab>
+
+</ion-content>

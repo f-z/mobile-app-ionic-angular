@@ -1,0 +1,48 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-buttons end><button ion-button clear (click)="goToPrivacySetupPage()">Next</button></ion-buttons>
+    <ion-title>Profile Set-up</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <h6 class="steps">Step 3 of 4</h6>
+
+  <div style="height:10px;"></div>
+
+  <h5>Please select your exercise preferences: </h5>
+
+  <div style="height:50px;"></div>
+  <ion-list>
+
+    <ion-item>
+      <ion-label>Running</ion-label>
+      <ion-checkbox [(ngModel)]="running"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Yoga</ion-label>
+      <ion-checkbox [(ngModel)]="yoga"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Pilates</ion-label>
+      <ion-checkbox [(ngModel)]="pilates"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Cycling</ion-label>
+      <ion-checkbox [(ngModel)]="cycling"></ion-checkbox>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>Weights</ion-label>
+      <ion-checkbox [(ngModel)]="weights"></ion-checkbox>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

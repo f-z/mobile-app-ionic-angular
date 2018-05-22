@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>More</ion-title>
+    <ion-buttons end>
+      <img style="width: 40px;" src="assets/imgs/roundel_white.png">
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <br>
+  <button class="selection" ion-button full round (tap)="goToPersonalData()">
+    <ion-icon class="iconcolour" name="heart"></ion-icon> Personal Data
+  </button>
+
+  <br>
+  <br>
+  <button class="selection" ion-button full round (tap)="goToAppSettings()">
+    <ion-icon class="iconcolour" name="settings"></ion-icon> App Settings
+  </button>
+
+  <br>
+  <br>
+  <button class="selection" ion-button full round (tap)="goToFeedbackSupport()">
+    <ion-icon class="iconcolour" name="chatboxes"></ion-icon> Feedback & Support
+  </button>
+
+  <br>
+  <br>
+  <button class="selection" ion-button full round (tap)="goToAbout()">
+    <ion-icon class="iconcolour" name="information-circle"></ion-icon> About
+  </button>
+
+  <br>
+  <br>
+  <button class="selection" ion-button full round (tap)="logout()">
+    <ion-icon class="iconcolour" name="log-out"></ion-icon> Logout
+  </button>
+
+  <!-- Add new challenge/exercise -->
+  <ion-fab right bottom #fab>
+    <div *ngIf="fabList.classList.contains('fab-list-active')" class="backdrop" (click)="fab.close();"></div>
+    <button ion-fab>
+      <ion-icon name="add"></ion-icon>
+    </button>
+    <ion-fab-list side="top" #fabList>
+      <button ion-fab (click)="goToAddChallenge()">
+        <ion-icon color="danger" name="flag"></ion-icon>
+        <ion-label tappable (click)="goToAddChallenge()">Add challenge</ion-label>
+      </button>
+      <button ion-fab (click)="goToAddExercise()">
+        <ion-icon color="danger" name="podium"></ion-icon>
+        <ion-label tappable (click)="goToAddExercise()">Add exercise</ion-label>
+      </button>
+      <button ion-fab (click)="goToAddVideo()">
+        <ion-icon color="danger" name="star"></ion-icon>
+        <ion-label tappable (click)="goToAddVideo()">Add video</ion-label>
+      </button>
+    </ion-fab-list>
+  </ion-fab>
+
+</ion-content>

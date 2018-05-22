@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Login</ion-title>
+    <ion-buttons end>
+      <img style="width: 40px;" src="assets/imgs/roundel_white.png">
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div style="height:20px;"></div>
+
+  <div style="text-align: center;">
+    <img class=logo style="width: 100%" src="assets/imgs/long_logo.jpg"> </div>
+
+  <div style="height:30px;"></div>
+
+  <ion-item class="inputbox">
+    <ion-label>
+      <ion-icon class="icon" name="person"></ion-icon> Username</ion-label>
+    <ion-input type="text" [(ngModel)]="username"></ion-input>
+  </ion-item>
+
+  <div style="height:10px;"></div>
+
+  <ion-item>
+    <ion-label>
+      <ion-icon class="icon" name="lock"></ion-icon> Password</ion-label>
+    <ion-input type="password" [(ngModel)]="password"></ion-input>
+  </ion-item>
+
+  <div style="height:30px;"></div>
+
+  <br>
+  <button class="done" ion-button full round (click)="login()">Login</button>
+
+  <div style="height:20px;"></div>
+
+  <button class="done" ion-button full round (click)="register()">Register</button>
+
+</ion-content>

@@ -1,0 +1,8 @@
+{
+  "name": "ExerciseApp",
+  "app_id": "d74e8a9a",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

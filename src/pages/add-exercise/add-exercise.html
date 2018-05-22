@@ -1,0 +1,45 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Add exercise</ion-title>
+    <ion-buttons end>
+      <img style="width: 40px;" src="assets/imgs/roundel_white.png">
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <div style="text-align: center;">
+    <img style="width: 55%;" src="assets/imgs/.png"> </div>
+
+  <div style="height:20px;"></div>
+
+  <ion-list-header>ADD AN EXERCISE:</ion-list-header>
+
+
+  <form [formGroup]="addExerciseForm">
+
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Exercise type*</ion-label>
+        <ion-input formControlName="exerciseType" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Distance (km)</ion-label>
+        <ion-input formControlName="distance" type="number"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Time (mins)</ion-label>
+        <ion-input formControlName="time" type="number"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <button class="save" ion-button full round color="primary" (click)="save()">Save</button>
+
+  </form>
+
+</ion-content>

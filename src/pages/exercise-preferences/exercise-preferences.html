@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Update Preferences
+    </ion-title>
+    <ion-buttons end>
+      <img style="width: 40px;" src="assets/imgs/roundel_white.png">
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="spacer" style="height:20px;" id="page-spacer1"></div>
+
+  <p>I would like the following exercise preferences:</p>
+
+  <div class="spacer" style="height:20px;" id="page-spacer1"></div>
+  <ion-list>
+    <ion-item>
+      <ion-label>Running</ion-label>
+      <ion-checkbox [(ngModel)]="running"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Yoga</ion-label>
+      <ion-checkbox [(ngModel)]="yoga"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Pilates</ion-label>
+      <ion-checkbox [(ngModel)]="pilates"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Cycling</ion-label>
+      <ion-checkbox [(ngModel)]="cycling"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Weights</ion-label>
+      <ion-checkbox [(ngModel)]="weights"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+
+  <br>
+  <br> <button class="save" ion-button full round (click)="updateEntry()">SAVE</button>
+
+</ion-content>

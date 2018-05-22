@@ -1,0 +1,147 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Challenge
+    </ion-title>
+    <ion-buttons end>
+      <img style="width: 40px;" src="assets/imgs/roundel_white.png">
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- toolbar at top of page -->
+  <ion-toolbar>
+    <ion-segment width="automatic" [(ngModel)]="currentChallengeTab" mode = "ios">
+      <ion-segment-button width="automatic" value="Challenges">
+        Events
+      </ion-segment-button>
+      <ion-segment-button width="automatic" value="My Challenges">
+        My Challenges
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+  <!-- Challenges tab -->
+  <div [ngSwitch]="currentChallengeTab">
+    <div *ngSwitchCase="'Challenges'">
+
+      <ion-searchbar [(ngModel)]="searchQuery" (ionInput)="getChallenges($event)" (ionClear)="resetList($event)">
+      </ion-searchbar>
+
+      <ion-list>
+        <ion-item class="item" *ngFor="let challenge of challengeList" (click)="goChallengeDetails(challenge)">
+          <img src="{{ challenge.image }}" alt="">
+          <div class="info-container">
+            <p padding text-wrap class="title">{{ challenge.name }}
+              <br>
+              <span style="font-size: 4vw;">{{ challenge.date }}</span>
+            </p>
+          </div>
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <!-- My Challenges tab -->
+    <div *ngSwitchCase="'My Challenges'">
+      <div>
+        <div style="text-align: center;">
+          <img style="width: 100%" src="assets/imgs/.jpg"> </div>
+        <!-- Active Challenges toolbar + reorder -->
+        <ion-toolbar>
+          <h6 padding>Active Challenges</h6>
+          <ion-buttons end>
+
+            <button class="edit" (click)="toggleReorder()" ion-button *ngIf="challengeList != null && !reorderIsEnabled">
+              Edit List
+            </button>
+            <button class="edit" (click)="toggleReorder()" ion-button *ngIf="reorderIsEnabled">
+              Done
+            </button>
+
+          </ion-buttons>
+        </ion-toolbar>
+
+        <!-- Help text upon first load -->
+        <div class="helpCard" *ngIf="challengeList.length == 0">
+          <p padding>
+            Add a new challenge using the "Add" button at the bottom of the page.
+          </p>
+        </div>
+
+        <!-- Active Challenges -->
+        <ion-list [reorder]="reorderIsEnabled" (ionItemReorder)="itemReordered($event)">
+          <ion-item-sliding #slidingItem *ngFor="let challenge of challengeList; let myChallengeIndex = index">
+            <ion-item>{{ challenge.name }}</ion-item>
+            <ion-item-options side="right">
+              <button ion-button color="primary" (click)="goToEditChallenge(slidingItem, challenge)">
+                <ion-icon name="create"></ion-icon>
+              </button>
+              <button ion-button color="danger" (click)="deleteEntry(slidingItem, challenge)">
+                <ion-icon name="trash"></ion-icon>
+              </button>
+            </ion-item-options>
+            <ion-item-options side="left" (ionSwipe)="completeEntry(slidingItem, challenge)">
+              <button ion-button icon-only expandable color="primary" (click)="completeEntry(slidingItem, challenge)">
+                <ion-icon name="checkmark"></ion-icon>
+              </button>
+            </ion-item-options>
+          </ion-item-sliding>
+        </ion-list>
+      </div>
+      <div>
+        <!-- Completed Challenges toolbar + reorder -->
+        <ion-toolbar>
+          <h6 padding>Completed Challenges</h6>
+        </ion-toolbar>
+
+        <!-- Help text -->
+        <!-- Help text upon first load -->
+        <div class="helpCard" *ngIf="completedChallengeList.length == 0">
+          <p padding>
+            Swipe right on your active challenges to complete them. Completed challenges go here.
+          </p>
+        </div>
+
+        <!-- Completed Challenges -->
+        <ion-list>
+          <ion-item-sliding #slidingItem *ngFor="let challenge of completedChallengeList">
+            <ion-item class="completed">{{ challenge.name }}</ion-item>
+            <ion-item-options>
+              <button ion-button color="danger" (click)="deleteCompletedEntry(slidingItem, challenge)">
+                <ion-icon name="trash"></ion-icon>
+              </button>
+            </ion-item-options>
+          </ion-item-sliding>
+          <br>
+          <br>
+          <!-- Provide spacing for bottom entry to be deleted and not get hidden behind FAB -->
+        </ion-list>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add new challenge/exercise -->
+  <ion-fab right bottom #fab>
+    <div *ngIf="fabList.classList.contains('fab-list-active')" class="backdrop" (click)="fab.close();"></div>
+    <button ion-fab>
+      <ion-icon name="add"></ion-icon>
+    </button>
+    <ion-fab-list side="top" #fabList>
+      <button ion-fab (click)="goToAddChallenge()">
+        <ion-icon color="danger" name="flag"></ion-icon>
+        <ion-label tappable (click)="goToAddChallenge()">Add challenge</ion-label>
+      </button>
+      <button ion-fab (click)="goToAddExercise()">
+        <ion-icon color="danger" name="podium"></ion-icon>
+        <ion-label tappable (click)="goToAddExercise()">Add exercise</ion-label>
+      </button>
+      <button ion-fab (click)="goToAddVideo()">
+        <ion-icon color="danger" name="star"></ion-icon>
+        <ion-label tappable (click)="goToAddVideo()">Add video</ion-label>
+      </button>
+    </ion-fab-list>
+  </ion-fab>
+
+</ion-content>

@@ -1,0 +1,51 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Add video</ion-title>
+    <ion-buttons end>
+      <img style="width: 40px;" src="assets/imgs/roundel_white.png">
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <div style="text-align: center;">
+    <img style="width: 55%;" src="assets/imgs/.png"> </div>
+
+  <div style="height:20px;"></div>
+
+  <form [formGroup]="featuredVideosForm" (ngSubmit)="logVideoForm()">
+
+    <ion-list radio-group name="radio">
+      <ion-list-header>SELECT FROM FEATURED:</ion-list-header>
+      <ion-item class="video" *ngFor="let featuredVideo of featuredVideos | async" (click)="selectVideo(featuredVideo)" detail-none>
+        <ion-label text-wrap>{{ featuredVideo.snippet.title }}
+        </ion-label>
+        <ion-radio (ionSelect)="select(featuredVideo)"></ion-radio>
+      </ion-item>
+    </ion-list>
+
+    <button class="save" ion-button full round type="submit">Save featured video</button>
+
+  </form>
+
+  <p></p>
+
+  <form [formGroup]="allVideosForm" (ngSubmit)="logVideoForm()">
+
+    <ion-list radio-group name="radio">
+      <ion-list-header>OR FROM ALL THE VIDEOS:</ion-list-header>
+      <ion-item class="video" *ngFor="let video of allVideos | async" (click)="selectVideo(video)" detail-none>
+        <ion-label text-wrap>{{ video.snippet.title }}
+        </ion-label>
+        <ion-radio (ionSelect)="select(video)"></ion-radio>
+      </ion-item>
+    </ion-list>
+
+    <button class="save" ion-button full round type="submit">Save workout video</button>
+
+  </form>
+
+</ion-content>

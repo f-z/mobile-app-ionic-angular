@@ -1,0 +1,51 @@
+page-more {
+  ////////////// MENU ITEMS ////////////////
+  .iconcolour {
+    color: white;
+    margin: 4px;
+  }
+
+  .menuitem {
+    color: black;
+  }
+
+  .selection {
+    background: #AF1685;
+    margin: 1px;
+  }
+  ///////////////// FAB BUTTONS ////////////////////////
+  button[ion-fab] {
+    overflow: visible;
+    position: relative;
+
+    ion-label {
+      position: absolute;
+      top: -8px;
+      right: 40px;
+      color: white;
+      background-color: #002C31;
+      box-shadow: 0 3px 4px #6b6b6b;
+      line-height: 24px;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+  }
+
+  .fab {
+    contain: layout;
+  }
+
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+
+  button.fab.fab-close-active {
+    z-index: 1;
+  }
+  ////////////////////////////////////////////////
+}
